@@ -13,7 +13,7 @@
 
     <div class="container">
         <header>
-            <h1>Flip the Card Memory Game</h1><h2>Welcome to Hagwards..</h2>
+            <h1>Flip the Card Game</h1><h2>Welcome to Hagwards..</h2>
         </header>
 
         <section class="score-panel">
@@ -24,12 +24,13 @@
         	</ul>
 
         	<span class="moves-counter">0</span> Move(s)
-            <div class="timer-container">
-                <span class="timer"><i class="fa fa-hourglass-start"></i> Timer: 00:00</span>
+
+            <div class="timer">
             </div>
-            <div class="reset">
-                <button class="btn reset-btn">Reset <i class="fa fa-repeat"></i></button>
-              </div>
+
+            <div class="restart" onclick=startGame()>
+        		<i class="fa fa-repeat"></i>
+        	</div>
         </section>
 
         <ul class="deck" id="card-deck">

@@ -13,9 +13,3 @@ let time;
 let minutes = 0;
 let seconds = 0;
 let timeStart = false;
-
-const deckCards=["badge1.PNG","badge1.PNG","badge2.PNG","badge2.PNG",
-"badge3.PNG","badge3.PNG","badge4.PNG","badge4.PNG",
-"badge5.PNG","badge5.PNG","badge6.PNG","badge6.PNG",
-"badge7.PNG","badge7.PNG","badge8.PNG","badge8.PNG"];
-

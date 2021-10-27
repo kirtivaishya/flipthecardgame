@@ -24,15 +24,11 @@ body {
 }
 
 .container {
-	display: flex;
+	display:  inline-block;
 	justify-content: center;
-	align-items: center;
-    flex-direction: column;
+	//align-items: center;
+    //flex-direction: column;
     margin-top: 0.5em;
-}
-.score-panel>div,ul,span{
-    display:inline;
-    padding: 0.5em;
 }
 
 h1 {
@@ -75,7 +71,7 @@ h1 {
   }
 
   .deck {
-   // background: linear-gradient(to bottom, rgb(119, 46, 4), rgb(192, 172, 164));
+    background: linear-gradient(to bottom, rgb(119, 46, 4), rgb(192, 172, 164));
     border-radius: 1.5em;
     display: flex;
     flex-wrap: wrap;

@@ -59,16 +59,16 @@ const initflip=()=>{
                 opened.shift();
                 console.log("Matched"+matched);
            }else if(opened.length==2 && card.childNodes[0].src!=openedPreviousCard.childNodes[0].src){
-            setInterval(()=>{  
-            opened.forEach(element => {
+                opened.forEach(element => {
                     removeFlip(element);
                 });
               
                opened=[];
-            },2000); 
+
            }
         }
-        
+        //moved to remove method
+        //card.classList.remove("flip");
         });
     });
  }

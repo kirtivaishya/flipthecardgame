@@ -65,10 +65,11 @@ const initflip=()=>{
                 });
               
                opened=[];
-            },2000); 
+            }); 
            }
         }
-        
+        //moved to remove method
+        //card.classList.remove("flip");
         });
     });
  }

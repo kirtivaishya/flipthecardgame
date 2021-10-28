@@ -52,23 +52,23 @@ const initflip=()=>{
        
         if(opened.length>=2){
             let openedPreviousCard=opened[opened.length-2];
-           
+          
             if(opened.length==2 && card.childNodes[0].src===openedPreviousCard.childNodes[0].src){
                  matched.push(card,openedPreviousCard);
                 opened.shift();
                 opened.shift();
                 console.log("Matched"+matched);
            }else if(opened.length==2 && card.childNodes[0].src!=openedPreviousCard.childNodes[0].src){
-            setInterval(()=>{  
-            opened.forEach(element => {
+                opened.forEach(element => {
                     removeFlip(element);
                 });
               
                opened=[];
-            },2000); 
+
            }
         }
-        
+        //moved to remove method
+        //card.classList.remove("flip");
         });
     });
  }

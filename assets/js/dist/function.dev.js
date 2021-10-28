@@ -48,20 +48,20 @@ var initflip = function initflip() {
       if (opened.length >= 2) {
         var openedPreviousCard = opened[opened.length - 2];
 
-        if (card.childNodes[0].src === openedPreviousCard.childNodes[0].src) {
+        if (opened.length == 2 && card.childNodes[0].src === openedPreviousCard.childNodes[0].src) {
           matched.push(card, openedPreviousCard);
           opened.shift();
           opened.shift();
           console.log("Matched" + matched);
-        } else {
-          opened.forEach(function (element) {
-            removeFlip(element);
-          });
-          opened = [];
+        } else if (opened.length == 2 && card.childNodes[0].src != openedPreviousCard.childNodes[0].src) {
+          setInterval(function () {
+            opened.forEach(function (element) {
+              removeFlip(element);
+            });
+            opened = [];
+          }, 2000);
         }
-      } //moved to remove method
-      //card.classList.remove("flip");
-
+      }
     });
   });
 };

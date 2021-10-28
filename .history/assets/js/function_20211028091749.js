@@ -14,7 +14,6 @@ let time;
 let minutes = 0;
 let seconds = 0;
 let timeStart = false;
-let handler = null;
 
 const deckCards=["badge1.PNG","badge1.PNG","badge2.PNG","badge2.PNG",
 "badge3.PNG","badge3.PNG","badge4.PNG","badge4.PNG",
@@ -76,13 +75,6 @@ const flip=()=>{
         timeCounter.innerHTML = "<i class='fa fa-hourglass-start'></i>" + " Timer: " + minutes + " Mins " + seconds + " Secs" ;
     }, 1000);    
 
-    const handleClearInterval = () => {
-        if (handler === null) {
-            alert("There is no interval to clear");
-        } else {
-            clearInterval(handler);
-        }
-    }
 }
 
 const updateMoves=()=>{

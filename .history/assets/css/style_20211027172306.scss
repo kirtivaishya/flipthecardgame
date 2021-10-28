@@ -135,7 +135,7 @@ h1 {
     visibility: hidden;
   }
   .deck .card.flip {
-    //background-size:cover;
+    background:transparent;
     cursor: pointer;
     transform: rotateY(180deg);
     transition: transform 0.6s linear;

@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Memory Game</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link href="http://fonts.cdnfonts.com/css/aquiline" rel="stylesheet prefetch">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Welcome to Hagwards ..Flip the Card Memory Game</h1>
+        </header>
+
+        <section class="score-panel">
+             <ul class="trophy">
+                <li><i class="fa fa-trophy"></i></li>
+                <li><i class="fa fa-trophy"></i></li>
+        		<li><i class="fa fa-trophy"></i></li>
+        	</ul>
+
+            <span class="moves-counter">0</span> Move(s)
+         
+            <div class="timer-container">
+                <span class="timer"><i class="fa fa-hourglass-start"></i> Timer: 00:00</span>
+            </div>
+            <div class="reset">
+                <button class="btn reset-btn">Reset <i class="fa fa-repeat"></i></button>
+              </div>
+        </section>
+
+        <ul class="deck" id="card-deck">
+            <li class="card flip"><img src="./assets/images/badge1.PNG"></li>
+           <!--  <li class="card"><img src="" alt=""></li>
+            <li class="card"><img src="" alt=""></li>
+            <li class="card"><img src="" alt=""></li>
+            <li class="card"><img src="" alt=""></li>
+            <li class="card"><img src="" alt=""></li>
+            <li class="card"><img src="" alt=""></li>
+            <li class="card"><img src="" alt=""></li>
+            <li class="card"><img src="" alt=""></li>
+            <li class="card"><img src="" alt=""></li>
+            <li class="card"><img src="" alt=""></li>
+            <li class="card"><img src="" alt=""></li>
+            <li class="card"><img src="" alt=""></li>
+            <li class="card"><img src="" alt=""></li> -->
+            <!-- <li class="card" type="diamond">
+                <i class="fa fa-diamond"></i>
+            </li>
+            <li class="card" type="plane">
+                <i class="fa fa-paper-plane-o"></i>
+            </li>
+            <li class="card match" type="anchor">
+                <i class="fa fa-anchor"></i>
+            </li>
+            <li class="card" type="bolt" >
+                <i class="fa fa-bolt"></i>
+            </li>
+            <li class="card" type="cube">
+                <i class="fa fa-cube"></i>
+            </li>
+            <li class="card match" type="anchor">
+                <i class="fa fa-anchor"></i>
+            </li>
+            <li class="card" type="leaf">
+                <i class="fa fa-leaf"></i>
+            </li>
+            <li class="card" type="bicycle">
+                <i class="fa fa-bicycle"></i>
+            </li>
+            <li class="card" type="diamond">
+                <i class="fa fa-diamond"></i>
+            </li>
+            <li class="card" type="bomb">
+                <i class="fa fa-bomb"></i>
+            </li>
+            <li class="card" type="leaf">
+                <i class="fa fa-leaf"></i>
+            </li>
+            <li class="card" type="bomb">
+                <i class="fa fa-bomb"></i>
+            </li>
+            <li class="card open show" type="bolt">
+                <i class="fa fa-bolt"></i>
+            </li>
+            <li class="card" type="bicycle">
+                <i class="fa fa-bicycle"></i>
+            </li>
+            <li class="card" type="plane">
+                <i class="fa fa-paper-plane-o"></i>
+            </li>
+            <li class="card" type="cube">
+                <i class="fa fa-cube"></i>
+            </li> -->
+        </ul>
+
+ 
+        <!-- Modal -->
+  <section class="win-game-modal">
+    <div id="modal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Congratulations you're a winner 🎉🎉</h2>
+        <p>You have won the game and found all 8 pairs of cards.</p>
+        <!-- <img class="modal-img" src="img/Vault-Boy-Thumb-Up.jpg" alt="Vault boy giving the thumbs up from the game fall out"> -->
+        <button class="btn play-again-btn">Play Again?</button>
+      </div>
+    </div>
+  </section>
+
+    </div>
+    <script src="./assets/js/function.js"></script>
+</body>
+</html>

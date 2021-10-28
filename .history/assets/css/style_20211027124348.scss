@@ -124,54 +124,24 @@ h1 {
     padding-right: 2em;
     width: 80%;
   }
-
-  //image 
-  img {
-    user-select: none;
-    
-    // width: 6em;
-  }
-  .deck img {
-    visibility: hidden;
-  }
-  .deck .card.flip {
-    //background-size:cover;
-    cursor: pointer;
-    transform: rotateY(180deg);
-    transition: transform 0.6s linear;
-    // pointer-events: none;
-  }
-  .flip img {
-    background: transparent;
-    visibility: visible;
-  }
-  .deck .card.match {
-    background: rgb(170, 221, 51);
-    visibility: visible;
-    //cursor: default;
-    animation: pulse 1s;
-  }
-  .match img {
-    background: rgb(170, 221, 51);
-  }
   
   @media screen and (min-width: 550px) {
-  .deck  {
-    height: 50em;
-    padding: 2em;
-    width: 50em;
+    .deck  {
+      height: 200px;
+      padding: 2em;
+      width: 350;
+    }
+    .card {
+      height: 10em;
+      width: 10em;
+    }
+    .deck img {
+      width: 9em;
+    }
+    .modal-content h2 {
+      font-size: 4em;
+    }
+    .play-again-btn {
+      font-size: 1.8em;
+    }
   }
-  .card {
-    height: 10em;
-    width: 10em;
-  }
-  .deck img {
-    width: 9em;
-  }
-  .modal-content h2 {
-    font-size: 4em;
-  }
-  .play-again-btn {
-    font-size: 1.8em;
-  }
-}

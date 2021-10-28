@@ -127,22 +127,22 @@ h1 {
 
   //image 
   img {
-    user-select: none;
-    
+    width: fit-content;
+    height: fit-content;
     // width: 6em;
   }
   .deck img {
     visibility: hidden;
   }
   .deck .card.flip {
-    //background-size:cover;
+    background-size:cover;
     cursor: pointer;
     transform: rotateY(180deg);
     transition: transform 0.6s linear;
     // pointer-events: none;
   }
   .flip img {
-    background: transparent;
+    background-size:cover;
     visibility: visible;
   }
   .deck .card.match {

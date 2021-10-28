@@ -14,7 +14,6 @@ let time;
 let minutes = 0;
 let seconds = 0;
 let timeStart = false;
-let handler = null;
 
 const deckCards=["badge1.PNG","badge1.PNG","badge2.PNG","badge2.PNG",
 "badge3.PNG","badge3.PNG","badge4.PNG","badge4.PNG",
@@ -46,47 +45,31 @@ const flip=()=>{
         moves++
         });
     });
-    updateMoves();
+    
 }
 
-// function timer() {
-//     // Update the count every 1 second
-//     time = setInterval(function() {
-//       seconds++;
-//         if (seconds === 60) {
-//           minutes++;
-//           seconds = 0;
-//         }
-//       // Update the timer in HTML with the time it takes the user to play the game
-//       timeCounter.innerHTML = "<i class='fa fa-hourglass-start'></i>" + " Timer: " + minutes + " Mins " + seconds + " Secs" ;
-//     }, 1000);
-//   }
+function timer() {
+    // Update the count every 1 second
+    time = setInterval(function() {
+      seconds++;
+        if (seconds === 60) {
+          minutes++;
+          seconds = 0;
+        }
+      // Update the timer in HTML with the time it takes the user to play the game
+      timeCounter.innerHTML = "<i class='fa fa-hourglass-start'></i>" + " Timer: " + minutes + " Mins " + seconds + " Secs" ;
+    }, 1000);
+  }
 
   const handleTimerStart = () => {
-    const time = setInterval(() => {
-        if (seconds === 0) {
-            clearInterval(time);
+    const timerHandler = setInterval(() => {
+        if (secondsRemaining === 0) {
+            clearInterval(timerHandler);
         }
-        if (seconds === 60) {
-            minutes++;
-            seconds = 0;
-          }
-       // timerDisplay.innerHTML = secondsRemaining;
-       // secondsRemaining --;
-        timeCounter.innerHTML = "<i class='fa fa-hourglass-start'></i>" + " Timer: " + minutes + " Mins " + seconds + " Secs" ;
+        timerDisplay.innerHTML = secondsRemaining;
+        secondsRemaining --;
     }, 1000);    
 
-    const handleClearInterval = () => {
-        if (handler === null) {
-            alert("There is no interval to clear");
-        } else {
-            clearInterval(handler);
-        }
-    }
-}
-
-const updateMoves=()=>{
-    movesCount.innerHTML=moves;
 }
 displayCards();
     

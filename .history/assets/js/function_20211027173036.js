@@ -14,7 +14,6 @@ let time;
 let minutes = 0;
 let seconds = 0;
 let timeStart = false;
-let handler = null;
 
 const deckCards=["badge1.PNG","badge1.PNG","badge2.PNG","badge2.PNG",
 "badge3.PNG","badge3.PNG","badge4.PNG","badge4.PNG",
@@ -31,7 +30,6 @@ const displayCards=()=>{
         //  imgTag.classList.add("img");
         imgTag.setAttribute("src","./assets/images/"+card);
        deck.appendChild(listCardTag);
-       flip()
 
     });
   
@@ -43,51 +41,10 @@ const flip=()=>{
            event.preventDefault();
            card.classList.add("flip");
         //    deck.classList.add("flip");
-        moves++
         });
     });
-    updateMoves();
 }
-
-// function timer() {
-//     // Update the count every 1 second
-//     time = setInterval(function() {
-//       seconds++;
-//         if (seconds === 60) {
-//           minutes++;
-//           seconds = 0;
-//         }
-//       // Update the timer in HTML with the time it takes the user to play the game
-//       timeCounter.innerHTML = "<i class='fa fa-hourglass-start'></i>" + " Timer: " + minutes + " Mins " + seconds + " Secs" ;
-//     }, 1000);
-//   }
-
-  const handleTimerStart = () => {
-    const time = setInterval(() => {
-        if (seconds === 0) {
-            clearInterval(time);
-        }
-        if (seconds === 60) {
-            minutes++;
-            seconds = 0;
-          }
-       // timerDisplay.innerHTML = secondsRemaining;
-       // secondsRemaining --;
-        timeCounter.innerHTML = "<i class='fa fa-hourglass-start'></i>" + " Timer: " + minutes + " Mins " + seconds + " Secs" ;
-    }, 1000);    
-
-    const handleClearInterval = () => {
-        if (handler === null) {
-            alert("There is no interval to clear");
-        } else {
-            clearInterval(handler);
-        }
-    }
-}
-
-const updateMoves=()=>{
-    movesCount.innerHTML=moves;
-}
+flip();
 displayCards();
     
 

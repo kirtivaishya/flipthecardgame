@@ -41,7 +41,6 @@ const displayCards=()=>{
     playAgain.addEventListener('click',(event)=>{
         modal.style.display = "none";
         resetGame();
-        displayCards();
     });
     reset.addEventListener('click',(event)=>{
         resetGame();

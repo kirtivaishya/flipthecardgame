@@ -41,7 +41,6 @@ const displayCards=()=>{
     playAgain.addEventListener('click',(event)=>{
         modal.style.display = "none";
         resetGame();
-        displayCards();
     });
     reset.addEventListener('click',(event)=>{
         resetGame();
@@ -91,7 +90,7 @@ const initflip=()=>{
 
  const removeFlip=(card)=> card.classList.remove("flip");
 
- const finished=(moves)=>{
+ const finished=()=>{
     modal.style.display="block";
  }
 
@@ -132,12 +131,11 @@ const resetGame=()=>{
   moves=0;
   movesCount.innerHTML=moves;
   opened = [];
-    matched.forEach(element => {
-        element.remove();
-    });
+    // matched.forEach(element => {
+    //     removeFlip(element);
+    // });
   
   matched = [];
-  
 }
 displayCards();
     

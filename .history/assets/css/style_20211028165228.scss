@@ -103,11 +103,9 @@ h1 {
     left: 0;
     top: 0;
     width: 80%;
-    height: 100%;
-    background-image: url("../images/win.png");
-    background-size:cover;
+    height: 80%;
     /* Fallback color */
-    transition: opacity 500ms;
+    
     // background-color: rgb(46, 61, 73);
     /* With opacity */
     // background-color: rgba(46, 61, 73, 0.6);
@@ -119,10 +117,8 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    // background-image: url("../images/win.png");
-    // background-size: cover;
+    
     /* 5% from the top and centered */
-    margin-top: 250px;
     margin: 5% auto;
     padding-right: 2em;
     width: 80%;

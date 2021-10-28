@@ -41,12 +41,8 @@ const displayCards=()=>{
     playAgain.addEventListener('click',(event)=>{
         modal.style.display = "none";
         resetGame();
-        displayCards();
-    });
-    reset.addEventListener('click',(event)=>{
-        resetGame();
-    });
-    
+    }
+    );
 }
 
 const initflip=()=>{
@@ -91,7 +87,7 @@ const initflip=()=>{
 
  const removeFlip=(card)=> card.classList.remove("flip");
 
- const finished=(moves)=>{
+ const finished=()=>{
     modal.style.display="block";
  }
 
@@ -130,14 +126,9 @@ const resetGame=()=>{
   minutes = 0;
   timeCounter.innerHTML = "<i class='fa fa-hourglass-start'></i>" + " Timer: 00:00";
   moves=0;
-  movesCount.innerHTML=moves;
   opened = [];
-    matched.forEach(element => {
-        element.remove();
-    });
-  
   matched = [];
-  
+  displayCards();
 }
 displayCards();
     

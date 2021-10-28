@@ -16,11 +16,6 @@ let seconds = 0;
 let timeStart = false;
 let handler = null;
 
-const deckCardsEasy=["badge1.PNG","badge1.PNG","badge2.PNG","badge2.PNG",
-"badge3.PNG","badge3.PNG"];
-const deckCardsMedium=["badge1.PNG","badge1.PNG","badge2.PNG","badge2.PNG",
-"badge3.PNG","badge3.PNG","badge4.PNG","badge4.PNG",
-"badge5.PNG","badge5.PNG",];
 const deckCards=["badge1.PNG","badge1.PNG","badge2.PNG","badge2.PNG",
 "badge3.PNG","badge3.PNG","badge4.PNG","badge4.PNG",
 "badge5.PNG","badge5.PNG","badge6.PNG","badge6.PNG",
@@ -38,21 +33,12 @@ const displayCards=()=>{
        deck.appendChild(listCardTag);     
     });
     initflip()
-    playAgain.addEventListener('click',(event)=>{
-        modal.style.display = "none";
-        resetGame();
-        displayCards();
-    });
-    reset.addEventListener('click',(event)=>{
-        resetGame();
-    });
-    
 }
 
 const initflip=()=>{
     const cards = document.querySelectorAll(".card");
     cards.forEach((card ,index)=> {
-        card.addEventListener('click',(event)=>{
+        card.addEventListener('click',function(event){
            event.preventDefault();
            card.classList.add("flip");
         //    deck.classList.add("flip");
@@ -91,7 +77,7 @@ const initflip=()=>{
 
  const removeFlip=(card)=> card.classList.remove("flip");
 
- const finished=(moves)=>{
+ const finished=()=>{
     modal.style.display="block";
  }
 
@@ -122,22 +108,6 @@ const initflip=()=>{
 
 const updateMoves=()=>{
     movesCount.innerHTML=moves;
-}
-
-const resetGame=()=>{
-  timeStart = false;
-  seconds = 0;
-  minutes = 0;
-  timeCounter.innerHTML = "<i class='fa fa-hourglass-start'></i>" + " Timer: 00:00";
-  moves=0;
-  movesCount.innerHTML=moves;
-  opened = [];
-    matched.forEach(element => {
-        element.remove();
-    });
-  
-  matched = [];
-  
 }
 displayCards();
     

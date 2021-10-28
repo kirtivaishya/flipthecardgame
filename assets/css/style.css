@@ -46,6 +46,7 @@ h1 {
 
 .moves-counter {
   padding: 0.5em;
+  font-size: xx-large;
 }
 
 .reset-btn {
@@ -137,13 +138,12 @@ ul > li {
 
 img {
   user-select: none;
-}
-
-.deck img {
+  height: 100%;
+  width: 100%;
   visibility: hidden;
 }
 
-.deck .card.flip {
+.card.flip {
   cursor: pointer;
   transform: rotateY(180deg);
   transition: transform 0.6s linear;
@@ -154,7 +154,7 @@ img {
   visibility: visible;
 }
 
-.deck .card.match {
+.card.match {
   background: #aadd33;
   visibility: visible;
   animation: pulse 1s;

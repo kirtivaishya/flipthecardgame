@@ -50,13 +50,12 @@ const initflip=()=>{
        
         opened.push(card);
        
-        if(opened.length>=2){
+        if(opened.length>1){
             let openedPreviousCard=opened[opened.length-2];
           
             if(card.childNodes[0].src===openedPreviousCard.childNodes[0].src){
                  matched.push(card,openedPreviousCard);
-                opened.shift();
-                opened.shift();
+                 opened=[];
                 console.log("Matched"+matched);
            }else{
                 opened.forEach(element => {

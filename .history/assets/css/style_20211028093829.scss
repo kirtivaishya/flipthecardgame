@@ -131,10 +131,12 @@ h1 {
     user-select: none;
     height: 100%;
     width: 100%;
-    visibility: hidden;
    }
-
-  .card.flip {
+   
+  .deck img {
+    visibility: hidden;
+  }
+  .deck .card.flip {
     //background-size:cover;
     cursor: pointer;
     transform: rotateY(180deg);
@@ -145,7 +147,7 @@ h1 {
     background: transparent;
     visibility: visible;
   }
-  .card.match {
+  .deck .card.match {
     background: rgb(170, 221, 51);
     visibility: visible;
     //cursor: default;

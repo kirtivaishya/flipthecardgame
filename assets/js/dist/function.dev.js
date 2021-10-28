@@ -27,40 +27,54 @@ var displayCards = function displayCards() {
 
     imgTag.setAttribute("src", "./assets/images/" + card);
     deck.appendChild(listCardTag);
-    flip();
   });
+  initflip();
 };
 
-var flip = function flip() {
+var initflip = function initflip() {
   var cards = document.querySelectorAll(".card");
-  cards.forEach(function (card) {
+  cards.forEach(function (card, index) {
     card.addEventListener('click', function (event) {
       event.preventDefault();
       card.classList.add("flip"); //    deck.classList.add("flip");
 
+      handleTimerStart();
       moves++;
+      console.log("moves" + moves);
+      updateMoves();
+      console.log(card.childNodes[0].src);
+      opened.push(card);
+
+      if (opened.length >= 2) {
+        var openedPreviousCard = opened[opened.length - 2];
+
+        if (card.childNodes[0].src === openedPreviousCard.childNodes[0].src) {
+          matched.push(card, openedPreviousCard);
+          opened.shift();
+          opened.shift();
+          console.log("Matched" + matched);
+        } else {
+          opened.forEach(function (element) {
+            removeFlip(element);
+          });
+          opened = [];
+        }
+      } //moved to remove method
+      //card.classList.remove("flip");
+
     });
   });
-  updateMoves();
-}; // function timer() {
-//     // Update the count every 1 second
-//     time = setInterval(function() {
-//       seconds++;
-//         if (seconds === 60) {
-//           minutes++;
-//           seconds = 0;
-//         }
-//       // Update the timer in HTML with the time it takes the user to play the game
-//       timeCounter.innerHTML = "<i class='fa fa-hourglass-start'></i>" + " Timer: " + minutes + " Mins " + seconds + " Secs" ;
-//     }, 1000);
-//   }
+};
 
+var removeFlip = function removeFlip(card) {
+  return card.classList.remove("flip");
+};
 
 var handleTimerStart = function handleTimerStart() {
   var time = setInterval(function () {
-    if (seconds === 0) {
-      clearInterval(time);
-    }
+    seconds++; // if (seconds === 0) {
+    //     clearInterval(time);
+    // }
 
     if (seconds === 60) {
       minutes++;

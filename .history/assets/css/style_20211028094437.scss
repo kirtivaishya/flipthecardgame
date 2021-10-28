@@ -134,6 +134,9 @@ h1 {
     visibility: hidden;
    }
 
+  //  img {
+    
+  // }
   .card.flip {
     //background-size:cover;
     cursor: pointer;
@@ -145,7 +148,7 @@ h1 {
     background: transparent;
     visibility: visible;
   }
-  .card.match {
+  .deck .card.match {
     background: rgb(170, 221, 51);
     visibility: visible;
     //cursor: default;

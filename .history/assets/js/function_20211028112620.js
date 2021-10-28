@@ -46,18 +46,15 @@ const initflip=()=>{
         moves++
         console.log("moves"+moves);
         updateMoves();
-         console.log(card.childNodes[0].src);
-       
+        console.log(card.childNodes[0].src);
+         console.log("index"+index);
         opened.push(card);
-       
-        if(opened.length>=2){
+        console.log(opened[opened.length-2][0].src);
+        if(opened.length>1){
             let openedPreviousCard=opened[opened.length-2];
-          
-            if(card.childNodes[0].src===openedPreviousCard.childNodes[0].src){
-                 matched.push(card,openedPreviousCard);
-                opened.shift();
-                opened.shift();
-                console.log("Matched"+matched);
+           if(card.childNodes[0].src===openedPreviousCard.childNodes[0].src){
+            matched.push(card,openedPreviousCard);
+            console.log("Matched"+matched);
            }else{
                 opened.forEach(element => {
                     removeFlip(element);

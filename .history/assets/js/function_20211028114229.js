@@ -55,8 +55,7 @@ const initflip=()=>{
           
             if(card.childNodes[0].src===openedPreviousCard.childNodes[0].src){
                  matched.push(card,openedPreviousCard);
-                opened.shift();
-                opened.shift();
+               //  opened=[];
                 console.log("Matched"+matched);
            }else{
                 opened.forEach(element => {

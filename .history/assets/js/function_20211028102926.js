@@ -32,12 +32,12 @@ const displayCards=()=>{
         imgTag.setAttribute("src","./assets/images/"+card);
        deck.appendChild(listCardTag);     
     });
-    initflip()
+    flip()
 }
 
-const initflip=()=>{
+const flip=()=>{
     const cards = document.querySelectorAll(".card");
-    cards.forEach((card ,index)=> {
+    cards.forEach(card => {
         card.addEventListener('click',function(event){
            event.preventDefault();
            card.classList.add("flip");
@@ -46,26 +46,12 @@ const initflip=()=>{
         moves++
         console.log("moves"+moves);
         updateMoves();
-         console.log(card.childNodes[0].src);
-       
-        opened.push(card);
-       
-        if(opened.length>=2){
-            let openedPreviousCard=opened[opened.length-2];
-          
-            if(card.childNodes[0].src===openedPreviousCard.childNodes[0].src){
-                 matched.push(card,openedPreviousCard);
-                opened.shift();
-                opened.shift();
-                console.log("Matched"+matched);
-           }else{
-                opened.forEach(element => {
-                    removeFlip(element);
-                });
-              
-               opened=[];
-
-           }
+        console.log(card.childNodes);
+        // console.log("index"+index);
+        opened.push(card.childNodes);
+        if(opened.length>1){
+            opened[0]==opened[1];
+            matched.push(opened[0],opened[1])
         }
         //moved to remove method
         //card.classList.remove("flip");
@@ -79,7 +65,6 @@ const initflip=()=>{
 
   const handleTimerStart = () => {
     const time = setInterval(() => {
-        seconds++;
         // if (seconds === 0) {
         //     clearInterval(time);
         // }

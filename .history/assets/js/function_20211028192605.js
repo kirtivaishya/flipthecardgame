@@ -42,7 +42,7 @@ const displayCards=()=>{
     playAgain.addEventListener('click',(event)=>{
         modal.style.display = "none";
         resetGame();
-       
+        displayCards();
     });
     reset.addEventListener('click',(event)=>{
         resetGame();
@@ -80,7 +80,7 @@ const initflip=()=>{
                 });
               
                opened=[];
-            },1000); 
+            },2000); 
            }
         }
         if(matched.length===deckCards.length){
@@ -157,8 +157,6 @@ const resetGame=()=>{
   
   matched = [];
   clearInterval(handler);
-  //displayCards();
-  document.location.reload();
   
 }
 displayCards();

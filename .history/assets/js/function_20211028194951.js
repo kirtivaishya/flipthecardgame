@@ -158,7 +158,6 @@ const resetGame=()=>{
   matched = [];
   clearInterval(handler);
   //displayCards();
-  document.location.reload();
   
 }
 displayCards();

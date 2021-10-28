@@ -2,7 +2,6 @@ const deck = document.querySelector(".deck");
 let opened = [];
 let matched = [];
 const modal = document.getElementById("modal");
-const modalContent = document.querySelector(".modal-content");
 const reset = document.querySelector(".reset-btn");
 const playAgain = document.querySelector(".play-again-btn");
 const movesCount = document.querySelector(".moves-counter");
@@ -42,7 +41,7 @@ const displayCards=()=>{
     playAgain.addEventListener('click',(event)=>{
         modal.style.display = "none";
         resetGame();
-       
+        displayCards();
     });
     reset.addEventListener('click',(event)=>{
         resetGame();
@@ -80,7 +79,7 @@ const initflip=()=>{
                 });
               
                opened=[];
-            },1000); 
+            },2000); 
            }
         }
         if(matched.length===deckCards.length){
@@ -98,19 +97,19 @@ const initflip=()=>{
   
     if (deckCards.length===moves ) {
         subheading.innerHTML= `you played awesome !! ${moves} moves in ${minutes}:${seconds}`;
-      
+        trophy[0].display="block";
+        trophy[1].display="block";
+        trophy[2].display="block";
     } else if(deckCards.length<moves && seconds<60) {
         subheading.innerHTML= `you played good !! ${moves} in ${minutes}:${seconds}`;
-
-        trophy[0].firstElementChild.classList.remove("fa-trophy");
+        trophy[0].display="block";
+        trophy[1].display="block";
     }else if(deckCards.length<moves && minutes>2) {
         subheading.innerHTML= `you played fair !! ${moves} in ${minutes}:${seconds}`;
-       
-        trophy[0].firstElementChild.classList.remove("fa-trophy");
-        trophy[1].firstElementChild.classList.remove("fa-trophy");
+        trophy[0].display="block";
         
     }
-    modalContent.appendChild(subheading);
+    modal.appendChild(subheading);
    
  }
 
@@ -128,15 +127,15 @@ const initflip=()=>{
        // timerDisplay.innerHTML = secondsRemaining;
        // secondsRemaining --;
         timeCounter.innerHTML = "<i class='fa fa-hourglass-start'></i>" + " Timer: " + minutes + " Mins " + seconds + " Secs" ;
-    }, 10000);    
+    }, 1000);    
 
-    // const handleClearInterval = () => {
-    //     if (handler === null) {
-    //         alert("There is no interval to clear");
-    //     } else {
-    //         clearInterval(handler);
-    //     }
-    // }
+    const handleClearInterval = () => {
+        if (handler === null) {
+            alert("There is no interval to clear");
+        } else {
+            clearInterval(handler);
+        }
+    }
 }
 
 const updateMoves=()=>{
@@ -156,9 +155,6 @@ const resetGame=()=>{
     });
   
   matched = [];
-  clearInterval(handler);
-  //displayCards();
-  document.location.reload();
   
 }
 displayCards();

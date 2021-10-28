@@ -46,7 +46,7 @@ const displayCards=()=>{
         break;
     
         default:
-            deckCards=deckCardsHard;
+            deckCards=deckCardsEasy;
             break;
     }
     deckCards.forEach(card => {
@@ -154,6 +154,13 @@ const initflip=()=>{
         timeCounter.innerHTML = "<i class='fa fa-hourglass-start'></i>" + " Timer: " + minutes + " Mins " + seconds + " Secs" ;
     }, 1000);    
 
+    // const handleClearInterval = () => {
+    //     if (handler === null) {
+    //         alert("There is no interval to clear");
+    //     } else {
+    //         clearInterval(handler);
+    //     }
+    // }
 }
 
 const updateMoves=()=>{

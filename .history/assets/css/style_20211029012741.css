@@ -40,8 +40,7 @@ h1 {
 
 .moves-counter, label {
   padding: 0.5em;
-  font-size: x-large;
-  color: #ad0a0a;
+  font-size: xx-large;
 }
 
 .reset-btn, .play-again-btn {
@@ -49,13 +48,14 @@ h1 {
 }
 
 .timer-container {
+  background: transparent;
   border-radius: 0.5em;
   color: #ad0a0a;
   margin: 0.5em;
 }
 
 .timer {
-  font-size: x-large;
+  font-size: xx-large;
 }
 
 ul > li {
@@ -95,12 +95,21 @@ ul > li {
 .card {
   background: #ac7f04;
   border-radius: 0.5em;
+  box-shadow: 1px 5px 12px 18px rgba(255,254,101,0.65);
   height: 7em;
   width: 7em;
 }
-.card:hover {
-  animation-name: fire-color;
+
+/* .deck:hover li{
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  
 }
+.card:hover li{
+  animation-name: fire-color;
+} */
+
 
 /* Modal (background) */
 .modal {

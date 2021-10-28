@@ -40,8 +40,7 @@ h1 {
 
 .moves-counter, label {
   padding: 0.5em;
-  font-size: x-large;
-  color: #ad0a0a;
+  font-size: xx-large;
 }
 
 .reset-btn, .play-again-btn {
@@ -49,13 +48,14 @@ h1 {
 }
 
 .timer-container {
+  background: transparent;
   border-radius: 0.5em;
   color: #ad0a0a;
   margin: 0.5em;
 }
 
 .timer {
-  font-size: x-large;
+  font-size: xx-large;
 }
 
 ul > li {
@@ -87,20 +87,33 @@ ul > li {
   width: 35em;
 }
 
-.deck,
+.deck{
+  box-shadow: 1px 5px 12px 18px rgba(64,174,255,0.33);}
 .card {
-  box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+  box-shadow: 1px 5px 12px 18px rgba(255,254,101,0.65);
 }
 
 .card {
-  background: #ac7f04;
+  background: #E6F582;
+background: -moz-linear-gradient(left, #E6F582 0%, #DBB11F 41%, #DB8D39 100%);
+background: -webkit-linear-gradient(left, #E6F582 0%, #DBB11F 41%, #DB8D39 100%);
+background: linear-gradient(to right, #E6F582 0%, #DBB11F 41%, #DB8D39 100%);
   border-radius: 0.5em;
+  
   height: 7em;
   width: 7em;
 }
-.card:hover {
-  animation-name: fire-color;
+
+/* .deck:hover li{
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  
 }
+.card:hover li{
+  animation-name: fire-color;
+} */
+
 
 /* Modal (background) */
 .modal {
@@ -141,8 +154,9 @@ img {
 
 .card.flip {
   cursor: pointer;
-  transform: rotateY(180deg);
+  transform: scale(1.2) rotateY(180deg);
   transition: transform 0.6s linear;
+  
 }
 
 .flip img {

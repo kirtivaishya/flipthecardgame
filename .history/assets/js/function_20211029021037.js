@@ -25,9 +25,9 @@ const deckCardsMedium=["badge4.PNG","badge1.PNG","badge2.PNG","badge5.PNG",
 "badge3.PNG","badge2.PNG",];
 const deckCardsHard=["badge8.PNG","badge1.PNG","badge3.PNG","badge2.PNG",
 "badge3.PNG","badge6.PNG","badge4.PNG","badge4.PNG",
-"badge7.PNG","badge5.PNG","badge2.PNG","badge6.PNG",    
+"badge7.PNG","badge5.PNG","badge2.PNG","badge6.PNG",
 "badge7.PNG","badge5.PNG","badge1.PNG","badge8.PNG"];
-let deckCards=["badge1.PNG","badge1.PNG","badge2.PNG","badge2.PNG",
+const deckCards=["badge1.PNG","badge1.PNG","badge2.PNG","badge2.PNG",
 "badge3.PNG","badge3.PNG","badge4.PNG","badge4.PNG",
 "badge5.PNG","badge5.PNG","badge6.PNG","badge6.PNG",
 "badge7.PNG","badge7.PNG","badge8.PNG","badge8.PNG"];
@@ -35,18 +35,18 @@ let deckCards=["badge1.PNG","badge1.PNG","badge2.PNG","badge2.PNG",
 
 const displayCards=()=>{
     switch (level.textContent) {
-        case "1":
+        case 1:
             deckCards=deckCardsEasy;
         break;
-        case "2":
+        case 2:
             deckCards=deckCardsMedium
         break;
-        case "3":
+        case 3:
             deckCards=deckCardsHard
         break;
     
         default:
-            deckCards=deckCardsHard;
+            deckCards=deckCardsEasy;
             break;
     }
     deckCards.forEach(card => {
@@ -154,6 +154,13 @@ const initflip=()=>{
         timeCounter.innerHTML = "<i class='fa fa-hourglass-start'></i>" + " Timer: " + minutes + " Mins " + seconds + " Secs" ;
     }, 1000);    
 
+    // const handleClearInterval = () => {
+    //     if (handler === null) {
+    //         alert("There is no interval to clear");
+    //     } else {
+    //         clearInterval(handler);
+    //     }
+    // }
 }
 
 const updateMoves=()=>{

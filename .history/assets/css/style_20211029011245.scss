@@ -41,20 +41,20 @@ h1 {
   }
   .moves-counter,label {
     padding: 0.5em;
-    font-size: x-large;
-    color: rgb(173, 10, 10);
+    font-size: xx-large;
   }
   .reset-btn ,.play-again-btn {
     background: #000;
   }
 .timer-container {
+    background:transparent;
     border-radius: 0.5em;
     color: rgb(173, 10, 10);
     margin: 0.5em;
     // padding: 0.5em;
   }
   .timer {
-    font-size:x-large;
+    font-size:xx-large;
   }
   ul > li {
     list-style: none;

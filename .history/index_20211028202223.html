@@ -4,7 +4,7 @@
     
 <head>
     <meta charset="utf-8">
-    <title>Flip Game</title>
+    <title>Memory Game</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
@@ -16,16 +16,11 @@
 
     <div class="container">
         <header>
-            <h1>Welcome to Hagwards..Flip the Card Memory Game</h1>        
+            <h1>Welcome to Hagwards..Flip the Card Memory Game</h1>            
         </header>
              
         <section class="score-panel">
-          <div id="stopMusic"><i class='fa fa-volume'></div>    
-           <!--  <div id="playMusic"><i class='fa fa-volume-mute'></i></div>  -->
-            <label>Level</label><div class="level-counter">1</div>
-            <label> Moves: </label> 
-            <div class="moves-counter">0</div>
-            
+            <span class="moves-counter">0</span> Move(s)
          
             <div class="timer-container">
                 <span class="timer"><i class="fa fa-hourglass-start"></i> Timer: 00:00</span>
@@ -42,11 +37,13 @@
 
  
         <!-- Modal -->
-  <!-- <section class="win-game-modal"> -->
+  <section class="win-game-modal">
     <div id="modal" class="modal">
       <!-- Modal content -->
       <div class="modal-content">
-        <h2>Congratulations you're a winner 🎉🎉</h2>         
+        <span class="close">&times;</span>
+          
+         <h2>Congratulations you're a winner 🎉🎉</h2>         
          <ul class="trophy">
           <li><i class="fa fa-trophy"></i></li>
           <li><i class="fa fa-trophy"></i></li>
@@ -55,13 +52,13 @@
          <button class="btn play-again-btn">Play Again?</button>
       </div>
     </div>
-  <!-- </section> -->
+  </section>
      </div>
-     <audio controls id="theme">
-      <source src="./assets/sound/harry_potter_loop.mp3" type="audio/mpeg"> 
+     <audio id="theme">
+      <source src="./assets/sound/harrypotter.mp3" type="audio/mpeg"> 
      </audio>
      <audio id="win">
-      <source src="./assets/sound/Applause-SoundBible.com-151138312.mp3" type="audio/mpeg"> 
+      <source src="./assets/sound/harrypotter.mp3" type="audio/mpeg"> 
      </audio>
     <script src="./assets/js/function.js"></script>
 </body>

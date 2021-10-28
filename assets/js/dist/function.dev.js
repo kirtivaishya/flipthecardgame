@@ -8,6 +8,7 @@ var modalContent = document.querySelector(".modal-content");
 var reset = document.querySelector(".reset-btn");
 var playAgain = document.querySelector(".play-again-btn");
 var movesCount = document.querySelector(".moves-counter");
+var level = document.querySelector(".level-counter");
 var moves = 0;
 var trophy = document.querySelectorAll(".fa-trophy");
 var starCount = 3;
@@ -17,11 +18,30 @@ var minutes = 0;
 var seconds = 0;
 var timeStart = false;
 var handler = null;
-var deckCardsEasy = ["badge1.PNG", "badge1.PNG", "badge2.PNG", "badge2.PNG", "badge3.PNG", "badge3.PNG"];
-var deckCardsMedium = ["badge1.PNG", "badge1.PNG", "badge2.PNG", "badge2.PNG", "badge3.PNG", "badge3.PNG", "badge4.PNG", "badge4.PNG", "badge5.PNG", "badge5.PNG"];
+var deckCardsEasy = ["badge1.PNG", "badge3.PNG", "badge2.PNG", "badge1.PNG", "badge3.PNG", "badge2.PNG"];
+var deckCardsMedium = ["badge4.PNG", "badge1.PNG", "badge2.PNG", "badge5.PNG", "badge3.PNG", "badge5.PNG", "badge1.PNG", "badge4.PNG", "badge3.PNG", "badge2.PNG"];
+var deckCardsHard = ["badge8.PNG", "badge1.PNG", "badge3.PNG", "badge2.PNG", "badge3.PNG", "badge6.PNG", "badge4.PNG", "badge4.PNG", "badge7.PNG", "badge5.PNG", "badge2.PNG", "badge6.PNG", "badge7.PNG", "badge5.PNG", "badge1.PNG", "badge8.PNG"];
 var deckCards = ["badge1.PNG", "badge1.PNG", "badge2.PNG", "badge2.PNG", "badge3.PNG", "badge3.PNG", "badge4.PNG", "badge4.PNG", "badge5.PNG", "badge5.PNG", "badge6.PNG", "badge6.PNG", "badge7.PNG", "badge7.PNG", "badge8.PNG", "badge8.PNG"];
 
 var displayCards = function displayCards() {
+  switch (level.textContent) {
+    case "1":
+      deckCards = deckCardsEasy;
+      break;
+
+    case "2":
+      deckCards = deckCardsMedium;
+      break;
+
+    case "3":
+      deckCards = deckCardsHard;
+      break;
+
+    default:
+      deckCards = deckCardsHard;
+      break;
+  }
+
   deckCards.forEach(function (card) {
     var listCardTag = document.createElement("li");
     listCardTag.classList.add("card");
@@ -31,6 +51,10 @@ var displayCards = function displayCards() {
     imgTag.setAttribute("src", "./assets/images/" + card);
     deck.appendChild(listCardTag);
   });
+};
+
+var startGame = function startGame() {
+  displayCards();
   initflip();
   playAgain.addEventListener('click', function (event) {
     modal.style.display = "none";
@@ -116,18 +140,19 @@ var handleTimerStart = function handleTimerStart() {
 
 
     timeCounter.innerHTML = "<i class='fa fa-hourglass-start'></i>" + " Timer: " + minutes + " Mins " + seconds + " Secs";
-  }, 10000); // const handleClearInterval = () => {
-  //     if (handler === null) {
-  //         alert("There is no interval to clear");
-  //     } else {
-  //         clearInterval(handler);
-  //     }
-  // }
+  }, 1000);
 };
 
 var updateMoves = function updateMoves() {
   movesCount.innerHTML = moves;
 };
+
+function removeCard() {
+  // As long as <ul> deck has a child node, remove it
+  while (deck.hasChildNodes()) {
+    deck.removeChild(deck.firstChild);
+  }
+}
 
 var resetGame = function resetGame() {
   timeStart = false;
@@ -136,14 +161,14 @@ var resetGame = function resetGame() {
   timeCounter.innerHTML = "<i class='fa fa-hourglass-start'></i>" + " Timer: 00:00";
   moves = 0;
   movesCount.innerHTML = moves;
-  opened = [];
-  matched.forEach(function (element) {
-    element.remove();
-  });
-  matched = [];
-  clearInterval(handler); //displayCards();
+  opened = []; // matched.forEach(element => {
+  //     element.remove();
+  // });
 
-  document.location.reload();
+  removeCard();
+  matched = [];
+  clearInterval(handler);
+  displayCards(); //document.location.reload();
 };
 
-displayCards();
+startGame();

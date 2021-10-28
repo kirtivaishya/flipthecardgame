@@ -59,7 +59,7 @@ const initflip=()=>{
                 opened.shift();
                 console.log("Matched"+matched);
            }else if(opened.length==2 && card.childNodes[0].src!=openedPreviousCard.childNodes[0].src){
-           const fliptime= setTimeout(()=>{  
+           const fliptime= setInterval(()=>{  
             opened.forEach(element => {
                     removeFlip(element);
                 });

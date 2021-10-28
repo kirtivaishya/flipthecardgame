@@ -54,7 +54,7 @@ var initflip = function initflip() {
           opened.shift();
           console.log("Matched" + matched);
         } else if (opened.length == 2 && card.childNodes[0].src != openedPreviousCard.childNodes[0].src) {
-          setInterval(function () {
+          var fliptime = setTimeout(function () {
             opened.forEach(function (element) {
               removeFlip(element);
             });

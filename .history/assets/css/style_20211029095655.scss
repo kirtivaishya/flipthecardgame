@@ -44,7 +44,7 @@ h1 {
     font-size: x-large;
     color: rgb(173, 10, 10);
   }
-  .reset-btn ,.play-again-btn,.medium-level,.hard-level {
+  .reset-btn ,.play-again-btn {
     background: #000;
   }
 .timer-container {
@@ -81,18 +81,17 @@ h1 {
     align-items: center;    
     margin-bottom: 6em;
     padding: 0.5em;    
-    height: 35em;
     
    &__easy{
-    
+    height: 65%;
     width: 45%;
    }
    &__medium{
-    height: 85%;
-    
+    height: 65%;
+    width: 65%;
    }
    &__hard{
-    
+    height: 35em;
     width: 35em;
    }
   }

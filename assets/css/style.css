@@ -44,7 +44,7 @@ h1 {
   color: #ad0a0a;
 }
 
-.reset-btn, .play-again-btn {
+.reset-btn, .play-again-btn, .medium-level, .hard-level {
   background: #000;
 }
 
@@ -81,9 +81,17 @@ ul > li {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  height: 35em;
   margin-bottom: 6em;
   padding: 0.5em;
+  height: 35em;
+}
+.deck__easy {
+  width: 45%;
+}
+.deck__medium {
+  height: 85%;
+}
+.deck__hard {
   width: 35em;
 }
 
@@ -112,11 +120,10 @@ ul > li {
   top: 0;
   width: 80%;
   height: 100%;
-  background-image: url("../images/win.png");
+  background-image: url("../images/win.jpg");
   background-size: cover;
   /* Fallback color */
   transition: opacity 500ms;
-  /* With opacity */
 }
 
 /* Modal Content/Box */
@@ -125,9 +132,8 @@ ul > li {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* 5% from the top and centered */
   margin-top: 250px;
-  margin: 5% auto;
+  margin: 15% auto;
   padding-right: 2em;
   width: 80%;
 }

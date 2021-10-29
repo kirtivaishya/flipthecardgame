@@ -5,8 +5,6 @@ const modal = document.getElementById("modal");
 const modalContent = document.querySelector(".modal-content");
 const reset = document.querySelector(".reset-btn");
 const playAgain = document.querySelector(".play-again-btn");
-const mediumLevel = document.querySelector(".medium-level");
-const hardLevel = document.querySelector(".hard-level");
 const movesCount = document.querySelector(".moves-counter");
 const level =document.querySelector(".level-counter");
 
@@ -25,7 +23,7 @@ const deckCardsEasy=["badge1.PNG","badge3.PNG","badge2.PNG","badge1.PNG",
 "badge3.PNG","badge2.PNG"];
 const deckCardsMedium=["badge4.PNG","badge1.PNG","badge2.PNG","badge5.PNG",
 "badge3.PNG","badge5.PNG","badge1.PNG","badge4.PNG",
-"badge3.PNG","badge2.PNG","badge6.PNG","badge6.PNG"];
+"badge3.PNG","badge2.PNG",];
 const deckCardsHard=["badge8.PNG","badge1.PNG","badge3.PNG","badge2.PNG",
 "badge3.PNG","badge6.PNG","badge4.PNG","badge4.PNG",
 "badge7.PNG","badge5.PNG","badge2.PNG","badge6.PNG",    
@@ -67,36 +65,19 @@ const displayCards=()=>{
     });
 }
 const startGame=()=>{
-    audiotheme.play();
     displayCards();
-    initflip();  
-} 
+    initflip();
+    audiotheme.play();
     playAgain.addEventListener('click',(event)=>{
         modal.style.display = "none";
         resetGame();
-        startGame();
-       
-    });
-    mediumLevel.addEventListener('click',(event)=>{
-        modal.style.display = "none";
-        level.innerHTML="2";
-        resetGame();
-        startGame();
-       
-    });
-    hardLevel.addEventListener('click',(event)=>{
-        modal.style.display = "none";
-        level.innerHTML="3";
-        resetGame();
-        startGame();
        
     });
     reset.addEventListener('click',(event)=>{
         resetGame();
-        startGame();
     });
     
-// }
+}
 
 
 const initflip=()=>{

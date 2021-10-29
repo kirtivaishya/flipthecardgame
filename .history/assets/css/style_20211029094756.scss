@@ -44,7 +44,7 @@ h1 {
     font-size: x-large;
     color: rgb(173, 10, 10);
   }
-  .reset-btn ,.play-again-btn,.medium-level,.hard-level {
+  .reset-btn ,.play-again-btn {
     background: #000;
   }
 .timer-container {
@@ -78,23 +78,11 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    align-items: center;    
-    margin-bottom: 6em;
-    padding: 0.5em;    
+    align-items: center;
     height: 35em;
-    
-   &__easy{
-    
-    width: 45%;
-   }
-   &__medium{
-    height: 85%;
-    
-   }
-   &__hard{
-    
+    margin-bottom: 6em;
+    padding: 0.5em;
     width: 35em;
-   }
   }
   .deck,
   .card {

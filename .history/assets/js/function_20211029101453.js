@@ -69,34 +69,29 @@ const displayCards=()=>{
 const startGame=()=>{
     audiotheme.play();
     displayCards();
-    initflip();  
-} 
+    initflip();   
     playAgain.addEventListener('click',(event)=>{
         modal.style.display = "none";
         resetGame();
-        startGame();
        
     });
     mediumLevel.addEventListener('click',(event)=>{
         modal.style.display = "none";
         level.innerHTML="2";
         resetGame();
-        startGame();
        
     });
     hardLevel.addEventListener('click',(event)=>{
         modal.style.display = "none";
         level.innerHTML="3";
         resetGame();
-        startGame();
        
     });
     reset.addEventListener('click',(event)=>{
         resetGame();
-        startGame();
     });
     
-// }
+}
 
 
 const initflip=()=>{

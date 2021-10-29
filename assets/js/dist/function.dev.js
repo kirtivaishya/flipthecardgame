@@ -7,6 +7,8 @@ var modal = document.getElementById("modal");
 var modalContent = document.querySelector(".modal-content");
 var reset = document.querySelector(".reset-btn");
 var playAgain = document.querySelector(".play-again-btn");
+var mediumLevel = document.querySelector(".medium-level");
+var hardLevel = document.querySelector(".hard-level");
 var movesCount = document.querySelector(".moves-counter");
 var level = document.querySelector(".level-counter");
 var moves = 0;
@@ -18,8 +20,10 @@ var minutes = 0;
 var seconds = 0;
 var timeStart = false;
 var handler = null;
+var audiotheme = new Audio('./assets/sound/harry_potter_loop.mp3');
+var audioclapping = new Audio('./assets/sound/Applause-SoundBible.com-151138312.mp3');
 var deckCardsEasy = ["badge1.PNG", "badge3.PNG", "badge2.PNG", "badge1.PNG", "badge3.PNG", "badge2.PNG"];
-var deckCardsMedium = ["badge4.PNG", "badge1.PNG", "badge2.PNG", "badge5.PNG", "badge3.PNG", "badge5.PNG", "badge1.PNG", "badge4.PNG", "badge3.PNG", "badge2.PNG"];
+var deckCardsMedium = ["badge4.PNG", "badge1.PNG", "badge2.PNG", "badge5.PNG", "badge3.PNG", "badge5.PNG", "badge1.PNG", "badge4.PNG", "badge3.PNG", "badge2.PNG", "badge6.PNG", "badge6.PNG"];
 var deckCardsHard = ["badge8.PNG", "badge1.PNG", "badge3.PNG", "badge2.PNG", "badge3.PNG", "badge6.PNG", "badge4.PNG", "badge4.PNG", "badge7.PNG", "badge5.PNG", "badge2.PNG", "badge6.PNG", "badge7.PNG", "badge5.PNG", "badge1.PNG", "badge8.PNG"];
 var deckCards = ["badge1.PNG", "badge1.PNG", "badge2.PNG", "badge2.PNG", "badge3.PNG", "badge3.PNG", "badge4.PNG", "badge4.PNG", "badge5.PNG", "badge5.PNG", "badge6.PNG", "badge6.PNG", "badge7.PNG", "badge7.PNG", "badge8.PNG", "badge8.PNG"];
 
@@ -27,18 +31,22 @@ var displayCards = function displayCards() {
   switch (level.textContent) {
     case "1":
       deckCards = deckCardsEasy;
+      deck.classList.add("deck__easy");
       break;
 
     case "2":
       deckCards = deckCardsMedium;
+      deck.classList.add("deck__medium");
       break;
 
     case "3":
       deckCards = deckCardsHard;
+      deck.classList.add("deck__hard");
       break;
 
     default:
       deckCards = deckCardsHard;
+      deck.classList.add("deck__hard");
       break;
   }
 
@@ -54,16 +62,32 @@ var displayCards = function displayCards() {
 };
 
 var startGame = function startGame() {
+  audiotheme.play();
   displayCards();
   initflip();
-  playAgain.addEventListener('click', function (event) {
-    modal.style.display = "none";
-    resetGame();
-  });
-  reset.addEventListener('click', function (event) {
-    resetGame();
-  });
 };
+
+playAgain.addEventListener('click', function (event) {
+  modal.style.display = "none";
+  resetGame();
+  startGame();
+});
+mediumLevel.addEventListener('click', function (event) {
+  modal.style.display = "none";
+  level.innerHTML = "2";
+  resetGame();
+  startGame();
+});
+hardLevel.addEventListener('click', function (event) {
+  modal.style.display = "none";
+  level.innerHTML = "3";
+  resetGame();
+  startGame();
+});
+reset.addEventListener('click', function (event) {
+  resetGame();
+  startGame();
+}); // }
 
 var initflip = function initflip() {
   var cards = document.querySelectorAll(".card");
@@ -110,6 +134,7 @@ var removeFlip = function removeFlip(card) {
 
 var finished = function finished(moves) {
   modal.style.display = "block";
+  audioclapping.play();
   var subheading = document.createElement("h3");
 
   if (deckCards.length === moves) {

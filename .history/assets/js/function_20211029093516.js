@@ -5,8 +5,6 @@ const modal = document.getElementById("modal");
 const modalContent = document.querySelector(".modal-content");
 const reset = document.querySelector(".reset-btn");
 const playAgain = document.querySelector(".play-again-btn");
-const mediumLevel = document.querySelector(".medium-level");
-const hardLevel = document.querySelector(".hard-level");
 const movesCount = document.querySelector(".moves-counter");
 const level =document.querySelector(".level-counter");
 
@@ -19,13 +17,13 @@ let minutes = 0;
 let seconds = 0;
 let timeStart = false;
 let handler = null;
-let audiotheme = new Audio('./assets/sound/harry_potter_loop.mp3');
-let audioclapping = new Audio('./assets/sound/Applause-SoundBible.com-151138312.mp3');
+let audiotheme = new Audio('audio.mp3');
+let audioclapping = new Audio('audio.mp3');
 const deckCardsEasy=["badge1.PNG","badge3.PNG","badge2.PNG","badge1.PNG",
 "badge3.PNG","badge2.PNG"];
 const deckCardsMedium=["badge4.PNG","badge1.PNG","badge2.PNG","badge5.PNG",
 "badge3.PNG","badge5.PNG","badge1.PNG","badge4.PNG",
-"badge3.PNG","badge2.PNG","badge6.PNG","badge6.PNG"];
+"badge3.PNG","badge2.PNG",];
 const deckCardsHard=["badge8.PNG","badge1.PNG","badge3.PNG","badge2.PNG",
 "badge3.PNG","badge6.PNG","badge4.PNG","badge4.PNG",
 "badge7.PNG","badge5.PNG","badge2.PNG","badge6.PNG",    
@@ -40,20 +38,16 @@ const displayCards=()=>{
     switch (level.textContent) {
         case "1":
             deckCards=deckCardsEasy;
-            deck.classList.add("deck__easy");
         break;
         case "2":
             deckCards=deckCardsMedium
-            deck.classList.add("deck__medium");
         break;
         case "3":
             deckCards=deckCardsHard
-            deck.classList.add("deck__hard");
         break;
     
         default:
             deckCards=deckCardsHard;
-            deck.classList.add("deck__hard");
             break;
     }
     deckCards.forEach(card => {
@@ -67,36 +61,18 @@ const displayCards=()=>{
     });
 }
 const startGame=()=>{
-    audiotheme.play();
     displayCards();
-    initflip();  
-} 
+    initflip();
     playAgain.addEventListener('click',(event)=>{
         modal.style.display = "none";
         resetGame();
-        startGame();
-       
-    });
-    mediumLevel.addEventListener('click',(event)=>{
-        modal.style.display = "none";
-        level.innerHTML="2";
-        resetGame();
-        startGame();
-       
-    });
-    hardLevel.addEventListener('click',(event)=>{
-        modal.style.display = "none";
-        level.innerHTML="3";
-        resetGame();
-        startGame();
        
     });
     reset.addEventListener('click',(event)=>{
         resetGame();
-        startGame();
     });
     
-// }
+}
 
 
 const initflip=()=>{
@@ -143,7 +119,6 @@ const initflip=()=>{
 
  const finished=(moves)=>{
     modal.style.display="block";
-    audioclapping.play();
     const subheading =document.createElement("h3");
   
     if (deckCards.length===moves ) {

@@ -44,7 +44,7 @@ h1 {
     font-size: x-large;
     color: rgb(173, 10, 10);
   }
-  .reset-btn ,.play-again-btn,.medium-level,.hard-level {
+  .reset-btn ,.play-again-btn {
     background: #000;
   }
 .timer-container {
@@ -78,23 +78,11 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    align-items: center;    
-    margin-bottom: 6em;
-    padding: 0.5em;    
+    align-items: center;
     height: 35em;
-    
-   &__easy{
-    
-    width: 45%;
-   }
-   &__medium{
-    height: 85%;
-    
-   }
-   &__hard{
-    
+    margin-bottom: 6em;
+    padding: 0.5em;
     width: 35em;
-   }
   }
   .deck,
   .card {
@@ -119,17 +107,24 @@ h1 {
     top: 0;
     width: 80%;
     height: 100%;
-    background-image: url("../images/win.jpg");
+    background-image: url("../images/win.png");
     background-size:cover;
     /* Fallback color */
     transition: opacity 500ms;
-   }
+    // background-color: rgb(46, 61, 73);
+    /* With opacity */
+    // background-color: rgba(46, 61, 73, 0.6);
+    // background: url("../images/win.png");
+  }
   /* Modal Content/Box */
   .modal-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    // background-image: url("../images/win.png");
+    // background-size: cover;
+    /* 5% from the top and centered */
     margin-top: 250px;
     margin: 15% auto;
     padding-right: 2em;

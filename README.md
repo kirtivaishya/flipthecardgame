@@ -11,7 +11,7 @@ Its an interesting memory game to improve the cognitive skills of individual . y
 - [Usage](#usage)
 - [Contributing](#Contributing)
 
-## Technolgies used 
+## Technologies used 
 
 1) Javascript 
 2) Html

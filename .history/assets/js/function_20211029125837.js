@@ -151,8 +151,14 @@ const initflip=()=>{
       
     } else if(deckCards.length<moves && seconds<60) {
         subheading.innerHTML= `you played good !! ${moves} in ${minutes}:${seconds}`;
+
+      //  trophy[0].firstElementChild.classList.remove("fa-trophy");
     }else if(deckCards.length<moves && minutes>2) {
         subheading.innerHTML= `you played fair !! ${moves} in ${minutes}:${seconds}`;
+       
+      //  trophy[0].firstElementChild.classList.remove("fa-trophy");
+       // trophy[1].firstElementChild.classList.remove("fa-trophy");
+        
     }
     modalContent.appendChild(subheading);
    

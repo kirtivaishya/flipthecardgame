@@ -141,11 +141,8 @@ var finished = function finished(moves) {
     subheading.innerHTML = "you played awesome !! ".concat(moves, " moves in ").concat(minutes, ":").concat(seconds);
   } else if (deckCards.length < moves && seconds < 60) {
     subheading.innerHTML = "you played good !! ".concat(moves, " in ").concat(minutes, ":").concat(seconds);
-    trophy[0].firstElementChild.classList.remove("fa-trophy");
   } else if (deckCards.length < moves && minutes > 2) {
     subheading.innerHTML = "you played fair !! ".concat(moves, " in ").concat(minutes, ":").concat(seconds);
-    trophy[0].firstElementChild.classList.remove("fa-trophy");
-    trophy[1].firstElementChild.classList.remove("fa-trophy");
   }
 
   modalContent.appendChild(subheading);

@@ -39,15 +39,15 @@ let deckCards=["badge1.PNG","badge1.PNG","badge2.PNG","badge2.PNG",
 const displayCards=()=>{
     switch (level.textContent) {
         case "1":
-            deckCards=shuffle(deckCardsEasy);
+            deckCards=deckCardsEasy;
             deck.classList.add("deck__easy");
         break;
         case "2":
-            deckCards=shuffle(deckCardsMedium);
+            deckCards=deckCardsMedium
             deck.classList.add("deck__medium");
         break;
         case "3":
-            deckCards=shuffle(deckCardsHard);
+            deckCards=deckCardsHard
             deck.classList.add("deck__hard");
         break;
     
@@ -199,10 +199,14 @@ const resetGame=()=>{
   moves=0;
   movesCount.innerHTML=moves;
   opened = [];
-  removeCard();
+    // matched.forEach(element => {
+    //     element.remove();
+    // });
+    removeCard();
   matched = [];
   clearInterval(handler);
-
+  //displayCards();
+  //document.location.reload();
   
 }
 const shuffle=(array)=> {
@@ -217,7 +221,7 @@ const shuffle=(array)=> {
     }
     return array;
   }
-
+  
 startGame();
     
 

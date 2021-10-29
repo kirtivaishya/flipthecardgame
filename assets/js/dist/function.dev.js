@@ -30,17 +30,17 @@ var deckCards = ["badge1.PNG", "badge1.PNG", "badge2.PNG", "badge2.PNG", "badge3
 var displayCards = function displayCards() {
   switch (level.textContent) {
     case "1":
-      deckCards = deckCardsEasy;
+      deckCards = shuffle(deckCardsEasy);
       deck.classList.add("deck__easy");
       break;
 
     case "2":
-      deckCards = deckCardsMedium;
+      deckCards = shuffle(deckCardsMedium);
       deck.classList.add("deck__medium");
       break;
 
     case "3":
-      deckCards = deckCardsHard;
+      deckCards = shuffle(deckCardsHard);
       deck.classList.add("deck__hard");
       break;
 
@@ -186,14 +186,26 @@ var resetGame = function resetGame() {
   timeCounter.innerHTML = "<i class='fa fa-hourglass-start'></i>" + " Timer: 00:00";
   moves = 0;
   movesCount.innerHTML = moves;
-  opened = []; // matched.forEach(element => {
-  //     element.remove();
-  // });
-
+  opened = [];
   removeCard();
   matched = [];
-  clearInterval(handler); //displayCards();
-  //document.location.reload();
+  clearInterval(handler);
+};
+
+var shuffle = function shuffle(array) {
+  var currentIndex = array.length,
+      temporaryValue,
+      randomIndex;
+
+  while (currentIndex !== 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
 };
 
 startGame();

@@ -35,10 +35,10 @@ Score Panel looks like :
 <img width="260" alt="Capture" src="./assets/images/hard.PNG">
 ## Contributing
 
-Kirti Vaishya 
+Kirti Vaishya .. 
 
 ## Acknolegements to coaches 
 
-Yujin and 
+Yujin and Sam
 
 

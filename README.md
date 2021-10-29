@@ -3,7 +3,7 @@
 
 ## Description
 
-Its an intresting memory game to improve the cognative skills of indiviual . you need to click on the card and seek out the matching one in less moves .
+Its an interesting memory game to improve the cognitive skills of individual . you need to click on the card and seek out the matching one in less moves .
 
 ## Table of Contents
 
@@ -21,7 +21,7 @@ Its an intresting memory game to improve the cognative skills of indiviual . you
 ## Usage
 are you a harry potter fan !! Enjoy the game with Hogward theme music..
 it has three levels - easy . medium and hard ..
-once you clear easy you can either play gain or move to next level .
+once you clear easy you can play again or move to next level .
 you can play here !! 
 -here -[https://kirtivaishya.github.io/flipthecardgame/](https://kirtivaishya.github.io/flipthecardgame/)
 it has three levels  Easy , Medium , Hard ..

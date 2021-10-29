@@ -86,10 +86,11 @@ ul > li {
   height: 35em;
 }
 .deck__easy {
+  height: 25em;
   width: 45%;
 }
 .deck__medium {
-  height: 85%;
+  width: 55%;
 }
 .deck__hard {
   width: 35em;

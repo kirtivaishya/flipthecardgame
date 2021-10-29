@@ -22,7 +22,7 @@ var timeStart = false;
 var handler = null;
 var audiotheme = new Audio('./assets/sound/harry_potter_loop.mp3');
 var audioclapping = new Audio('./assets/sound/Applause-SoundBible.com-151138312.mp3');
-var deckCardsEasy = ["badge1.PNG", "badge3.PNG", "badge2.PNG", "badge1.PNG", "badge3.PNG", "badge2.PNG"];
+var deckCardsEasy = ["badge1.PNG", "badge3.PNG", "badge2.PNG", "badge2.PNG", "badge3.PNG", "badge1.PNG"];
 var deckCardsMedium = ["badge4.PNG", "badge1.PNG", "badge2.PNG", "badge5.PNG", "badge3.PNG", "badge5.PNG", "badge1.PNG", "badge4.PNG", "badge3.PNG", "badge2.PNG", "badge6.PNG", "badge6.PNG"];
 var deckCardsHard = ["badge8.PNG", "badge1.PNG", "badge3.PNG", "badge2.PNG", "badge3.PNG", "badge6.PNG", "badge4.PNG", "badge4.PNG", "badge7.PNG", "badge5.PNG", "badge2.PNG", "badge6.PNG", "badge7.PNG", "badge5.PNG", "badge1.PNG", "badge8.PNG"];
 var deckCards = ["badge1.PNG", "badge1.PNG", "badge2.PNG", "badge2.PNG", "badge3.PNG", "badge3.PNG", "badge4.PNG", "badge4.PNG", "badge5.PNG", "badge5.PNG", "badge6.PNG", "badge6.PNG", "badge7.PNG", "badge7.PNG", "badge8.PNG", "badge8.PNG"];
@@ -192,8 +192,8 @@ var resetGame = function resetGame() {
 
   removeCard();
   matched = [];
-  clearInterval(handler);
-  displayCards(); //document.location.reload();
+  clearInterval(handler); //displayCards();
+  //document.location.reload();
 };
 
 startGame();

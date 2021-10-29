@@ -21,8 +21,8 @@ let timeStart = false;
 let handler = null;
 let audiotheme = new Audio('./assets/sound/harry_potter_loop.mp3');
 let audioclapping = new Audio('./assets/sound/Applause-SoundBible.com-151138312.mp3');
-const deckCardsEasy=["badge1.PNG","badge3.PNG","badge2.PNG","badge2.PNG",
-"badge3.PNG","badge1.PNG"];
+const deckCardsEasy=["badge1.PNG","badge3.PNG","badge2.PNG","badge1.PNG",
+"badge3.PNG","badge2.PNG"];
 const deckCardsMedium=["badge4.PNG","badge1.PNG","badge2.PNG","badge5.PNG",
 "badge3.PNG","badge5.PNG","badge1.PNG","badge4.PNG",
 "badge3.PNG","badge2.PNG","badge6.PNG","badge6.PNG"];
